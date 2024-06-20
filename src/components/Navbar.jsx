@@ -22,8 +22,7 @@ const Navbar = () => {
     }
     return (
         <div>
-        <nav>
-          <h6>Logo</h6>
+        <nav className='flex justify-between'>
           <ul className='gap-4 p-4 space-x-3'>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
