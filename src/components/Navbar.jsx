@@ -24,6 +24,10 @@ const Navbar = () => {
         {
             title:'category',
             path:'/category'
+        },
+        {
+            title:'Post',
+            path:'/posts'
         }
     ]
     const handlelogin = ()=>{
