@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import React from 'react';
 
 const getPosts = async()=>{
@@ -18,6 +19,7 @@ const page = async() => {
                     <div key={post.userId} className='border-4 border-red-400'>
                       <h6>{post.title}</h6>
                       <h6>{post.description}</h6>
+                      <button className='btn'><Link href={`/posts/${post.id}`}>View details</Link> </button>
                     </div>
                  ))
               }
