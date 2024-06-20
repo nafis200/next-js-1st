@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         
         <Navbar></Navbar>
-         <div className="h-screen">
+         <div className="">
           {children}
           </div>
          <footer className="text-center text-4xl">
