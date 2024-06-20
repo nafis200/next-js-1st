@@ -20,6 +20,10 @@ const Navbar = () => {
             title:'dashboard',
             path:'/dashboard'
             // group er moddhe dashboard taw /group/dashboard na diye just dashboard dilei kaj korbe
+        },
+        {
+            title:'category',
+            path:'/category'
         }
     ]
     const handlelogin = ()=>{

@@ -4,7 +4,7 @@
 
 const page = ({params}) => {
     // console.log(params)
-    console.log(params.slug)
+    // console.log(params.slug)
     
     return (
         <div>
