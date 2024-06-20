@@ -1,11 +1,12 @@
 
 "use client"
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
     const pathName = usePathname()
+    const router = useRouter()
     const links = [
         {
             title:'Home',
@@ -16,6 +17,9 @@ const Navbar = () => {
             path:'/about'
         }
     ]
+    const handlelogin = ()=>{
+        router.push('/about')
+    }
     return (
         <div>
         <nav>
@@ -29,6 +33,7 @@ const Navbar = () => {
                 }`} key={link.path} href={link.path}>{link.title}</Link>)
             }
           </ul>
+          <button onClick={handlelogin} className='btn'>Login</button>
         </nav>
         </div>
     );
