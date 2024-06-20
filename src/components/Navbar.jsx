@@ -15,11 +15,19 @@ const Navbar = () => {
         {
             title:'About',
             path:'/about'
+        },
+        {
+            title:'dashboard',
+            path:'/dashboard'
+            // group er moddhe dashboard taw /group/dashboard na diye just dashboard dilei kaj korbe
         }
     ]
     const handlelogin = ()=>{
         router.push('/about')
     }
+    if(pathName.includes("dashboard"))
+    return <div className='bg-red-400 p-4'>I am  dashboard navbar</div>
+
     return (
         <div>
         <nav className='flex justify-between'>

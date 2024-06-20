@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
          <div className="">
           {children}
           </div>
-         <footer className="text-center text-4xl">
+         {/* <footer className="text-center text-4xl">
             this is my footer
-         </footer>
+         </footer> */}
         </body>
     </html>
   );
