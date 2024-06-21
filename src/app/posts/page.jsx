@@ -8,6 +8,8 @@ const getPosts = async()=>{
     return data
 }
 
+
+
 const page = async() => {
      const postData = await getPosts()
     return (

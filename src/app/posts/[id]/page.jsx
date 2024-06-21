@@ -1,6 +1,12 @@
 
 import React from 'react';
 
+export const generateMetadata = async({params})=>{
+    return {
+        title: `Post details ${params.id}`
+    }
+}
+
 const page = ({params}) => {
    
     return (
