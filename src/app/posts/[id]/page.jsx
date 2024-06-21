@@ -2,8 +2,10 @@
 import React from 'react';
 
 export const generateMetadata = async({params})=>{
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+    const data = await res.json() 
     return {
-        title: `Post details ${params.id}`
+        title: `Post details ${data.title}`
     }
 }
 
