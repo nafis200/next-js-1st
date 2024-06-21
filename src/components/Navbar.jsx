@@ -28,6 +28,10 @@ const Navbar = () => {
         {
             title:'Post',
             path:'/posts'
+        },
+        {
+            title:'meals',
+            path:'/meals'
         }
     ]
     const handlelogin = ()=>{
