@@ -2,6 +2,9 @@
 import Aboutroute from '@/components/Aboutroute';
 import Nafis from '@/components/Nafis';
 import React from 'react';
+import { Headland_One } from 'next/font/google';
+
+const headlan =  Headland_One({weight:['400'],subsets:['latin']})
 
 export const metadata = {
     title: "About data",
@@ -10,7 +13,7 @@ export const metadata = {
 
 const Aboutpage = () => {
     return (
-        <div>
+        <div className={`${headlan.className}`}>
              <Aboutroute></Aboutroute>
             <Nafis></Nafis>
         </div>

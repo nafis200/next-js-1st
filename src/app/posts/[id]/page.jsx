@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import React from 'react';
 
 export const generateMetadata = async({params})=>{
@@ -14,6 +15,7 @@ const page = ({params}) => {
     return (
         <div>
             <h2 className="text-2xl">{params.id}</h2>
+            <Image src="/image/imgonline-com-ua-Transparent-background-dCx8Jbt05t (1).jpg" alt="not shown" height="300" width="300" />
         </div>
     );
 };
