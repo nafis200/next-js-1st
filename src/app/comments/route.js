@@ -1,11 +1,20 @@
 
 
+// export async function GET(){
+//     return Response.json({
+//         message: "hellow server",
+//         ...comments
+//     })
+// }
+
 export async function GET(){
-    return Response.json({
-        message: "hellow server",
-        ...comments
+    return Response.json(comments,{
+        headers:{
+            "Set-Cookie": "theme white"
+        }
     })
 }
+
 
 export async function POST(request){
     const newComment =await request.json()
