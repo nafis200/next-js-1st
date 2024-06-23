@@ -1,6 +1,9 @@
 import { Inter,Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import AuthProvider from "@/services/AuthProvider";
+
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,15 +21,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body className={roboto.className}>
-        
-      
+        <AuthProvider>
         <Navbar></Navbar>
          <div className="">
           {children}
           </div>
-       
-         
+        </AuthProvider>
+        
         </body>
     </html>
   );

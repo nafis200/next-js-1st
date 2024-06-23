@@ -1,5 +1,6 @@
 
 "use client"
+import { SessionProvider, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
@@ -7,6 +8,9 @@ import React from 'react';
 const Navbar = () => {
     const pathName = usePathname()
     const router = useRouter()
+    const seasion = useSession()
+    console.log(seasion)
+    
     const links = [
         {
             title:'Home',
@@ -35,7 +39,11 @@ const Navbar = () => {
         }
     ]
     const handlelogin = ()=>{
-        router.push('/about')
+        router.push('/api/auth/signin')
+    }
+
+    const handlelogout = ()=>{
+         router.push('/api/auth/signout')
     }
     if(pathName.includes("dashboard"))
     return <div className='bg-red-400 p-4'>I am  dashboard navbar</div>
@@ -52,7 +60,9 @@ const Navbar = () => {
                 }`} key={link.path} href={link.path}>{link.title}</Link>)
             }
           </ul>
-          <button onClick={handlelogin} className='btn'>Login</button>
+          {
+            seasion.status === 'unauthenticated' ? <button onClick={handlelogin} className='btn'>Login</button> : <button className='btn' onClick={handlelogout}>Logout</button>
+          }
         </nav>
         </div>
     );

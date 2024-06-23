@@ -3,6 +3,8 @@ import Aboutroute from '@/components/Aboutroute';
 import Nafis from '@/components/Nafis';
 import React from 'react';
 import { Headland_One } from 'next/font/google';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 // import { redirect } from 'next/navigation';
 
 const headlan =  Headland_One({weight:['400'],subsets:['latin']})
@@ -24,6 +26,7 @@ export const metadata = {
   }
 
 const Aboutpage = async() => {
+    const session = await getServerSession(authOptions)
     const currentTime = await getTime()
     return (
         <div className={`${headlan.className}`}>
