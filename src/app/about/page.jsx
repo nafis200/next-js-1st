@@ -27,6 +27,7 @@ export const metadata = {
 
 const Aboutpage = async() => {
     const session = await getServerSession(authOptions)
+    console.log(session)
     const currentTime = await getTime()
     return (
         <div className={`${headlan.className}`}>

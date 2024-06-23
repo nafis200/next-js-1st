@@ -10,8 +10,8 @@ export const authOptions = {
     providers:[
         CredentialsProvider({
             credentials: {
-              email: { label: "Email", type: "text",  required:true, placeholder: "your email"},
-              password: { label: "Password", type: "password", required:true, placeholder: "your password" }
+              email:{ label: "email", type: "text",  required:true, placeholder: "your email"},
+              password:{ label: "password", type: "password", required:true, placeholder: "your password" }
             },
             async authorize(credentials) {
               const {email, password} = credentials
@@ -23,7 +23,7 @@ export const authOptions = {
                       const currentUser = users.find((user)=> user.email === email)
                       if(currentUser){
                          if(currentUser.password === password){
-                          return true
+                          return currentUser
                          }
                       }
                    }
