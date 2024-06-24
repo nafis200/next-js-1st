@@ -24,7 +24,7 @@ export const authOptions = {
                       const currentUser = users.find((user)=> user.email === email)
                       if(currentUser){
                          if(currentUser.password === password){
-                          return currentUser
+                          return {...currentUser}
                          }
                       }
                    }

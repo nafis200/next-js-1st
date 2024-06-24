@@ -63,6 +63,11 @@ const Navbar = () => {
           {
             seasion.status === 'unauthenticated' ? <button onClick={handlelogin} className='btn'>Login</button> : <button className='btn' onClick={handlelogout}>Logout</button>
           }
+          <h6>
+           {
+            seasion?.data?.user?.name
+           }
+          </h6>
         </nav>
         </div>
     );
