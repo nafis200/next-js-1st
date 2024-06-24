@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server'
+import {cookies} from 'next/headers'
 
- 
-// This function can be marked `async` if using `await` inside
+
 export function middleware(request) {
-    // return NextResponse.redirect(new URL('/about/history', request.url))
+    
+    const token = cookies(request).get('next-auth.session-token')
+
+    if(!token){
+      return NextResponse.redirect(new URL('/api/auth/signin',request.url))
+    }
+
     return NextResponse.next()
   
 }
@@ -11,5 +17,3 @@ export function middleware(request) {
 export const config = {
   matcher: ['/dashboard'],
 }
-
-// src folder e e ekta file create korte hobe

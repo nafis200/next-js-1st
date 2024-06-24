@@ -1,6 +1,6 @@
 
 "use client"
-import { SessionProvider, useSession } from 'next-auth/react';
+import { SessionProvider, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
@@ -43,7 +43,7 @@ const Navbar = () => {
     }
 
     const handlelogout = ()=>{
-         router.push('/api/auth/signout')
+         signOut()
     }
     if(pathName.includes("dashboard"))
     return <div className='bg-red-400 p-4'>I am  dashboard navbar</div>
