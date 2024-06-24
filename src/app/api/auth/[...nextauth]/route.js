@@ -5,7 +5,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 export const authOptions = {
     secret:process.env.NEXT_PUBLIC_AUTH_SECRET,
     session:{
-        strategy: 'jwt'
+        strategy: 'jwt',
+        maxAge: 30 * 24 * 60 * 60
     },
     providers:[
         CredentialsProvider({
@@ -32,6 +33,18 @@ export const authOptions = {
              }
         })
     ],
+    callbacks:{
+        async session({ session, token }) {
+            session.user.type = token.type
+            return session
+          },
+          async jwt({ token, account, user }) {
+            if (account) {
+              token.type = user.type
+            }
+            return token
+          }
+    }
 }
 const handler = NextAuth(authOptions)
 
@@ -40,12 +53,14 @@ const users = [
         id: 1,
         name: 'nafis',
         email: "n@gmail.com",
+        type:'admin',
         password: "password",
     },
     {
         id: 2,
         name: "Zihad",
         email: "z@gmail.com",
+        type:'user',
         password: "password"
     }
 ]
